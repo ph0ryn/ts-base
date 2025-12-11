@@ -15,7 +15,8 @@
     "builtin": true
   },
   "ignorePatterns": [
-    "dist/**"
+    "dist/**",
+    "eslint.config.mjs"
   ],
   "overrides": [
     {
