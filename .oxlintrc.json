@@ -1,16 +1,15 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": [
-    "typescript",
-    "oxc"
+    "typescript"
   ],
   "categories": {
-    "correctness": "off",
+    "correctness": "error",
     "suspicious": "off",
     "pedantic": "off",
-    "style": "off",
+    "style": "error",
     "restriction": "off",
-    "nursery": "off"
+    "nursery": "warn"
   },
   "env": {
     "builtin": true
@@ -18,71 +17,7 @@
   "ignorePatterns": [
     "dist/**"
   ],
-  "rules": {
-    "no-multiple-empty-lines": [
-      "error",
-      {
-        "max": 1,
-        "maxEOF": 0
-      }
-    ],
-    "oxc/prefer-const": "error",
-    "typescript/naming-convention": [
-      "error",
-      {
-        "selector": "class",
-        "format": [
-          "StrictPascalCase"
-        ],
-      },
-      {
-        "selector": "property",
-        "format": [
-          "StrictPascalCase",
-          "strictCamelCase"
-        ],
-      },
-      {
-        "selector": [
-          "variable",
-          "parameter",
-          "class",
-          "property"
-        ],
-        "format": [
-          "strictCamelCase"
-        ],
-      },
-    ]
-  },
   "overrides": [
-    {
-      "files": [
-        "src/**/*.ts"
-      ],
-      "rules": {
-        "import-x/order": [
-          "error",
-          {
-            "alphabetize": {
-              "order": "asc"
-            },
-            "groups": [
-              "builtin",
-              "external",
-              "internal",
-              [
-                "parent",
-                "sibling",
-                "index"
-              ],
-              "type"
-            ],
-            "newlines-between": "always",
-          },
-        ]
-      }
-    },
     {
       "files": [
         "src/**/*.ts"
