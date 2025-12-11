@@ -1,0 +1,23 @@
+{
+  "name": "ts-base",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "bun x eslint .",
+    "format": "bun x eslint --fix . && bun x oxfmt .",
+    "check": "bun x tsc --noEmit"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@stylistic/eslint-plugin": "^5.6.1",
+    "@types/bun": "latest",
+    "eslint": "^9.39.1",
+    "eslint-plugin-import-x": "^4.16.1",
+    "oxfmt": "^0.16.0",
+    "typescript-eslint": "^8.48.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
