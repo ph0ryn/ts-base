@@ -5,17 +5,18 @@
   "private": true,
   "scripts": {
     "lint": "bunx oxlint --type-aware",
-    "format": "bunx oxlint --type-aware --fix . && bunx oxfmt .",
+    "format": "bunx oxlint --type-aware --fix . ; bunx oxfmt . ; bunx eslint --fix .",
     "check": "bunx tsc --noEmit"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.6.1",
     "@types/bun": "latest",
+    "eslint": "^9.39.1",
     "eslint-plugin-import-x": "^4.16.1",
     "eslint-plugin-oxlint": "^1.32.0",
     "oxfmt": "^0.16.0",
     "oxlint": "^1.32.0",
-    "oxlint-tsgolint": "^0.8.5",
+    "oxlint-tsgolint": "^0.9.1",
     "typescript-eslint": "^8.49.0"
   },
   "peerDependencies": {

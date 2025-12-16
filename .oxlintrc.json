@@ -12,12 +12,20 @@
     "nursery": "warn"
   },
   "env": {
-    "builtin": true
+    "node": true
   },
   "ignorePatterns": [
     "dist/**",
-    "eslint.config.mjs"
+    "eslint.config.mjs",
+    "node_modules/**"
   ],
+  "rules": {
+    "func-style": "off",
+    "no-inferrable-types": "off",
+    "no-magic-numbers": "off",
+    "prefer-destructuring": "warn",
+    "sort-imports": "off"
+  },
   "overrides": [
     {
       "files": [

@@ -1,9 +1,10 @@
+import { defineConfig } from "eslint/config";
 import importX from "eslint-plugin-import-x";
 import stylistic from "@stylistic/eslint-plugin";
 import tseslint from "typescript-eslint";
 import oxlint from "eslint-plugin-oxlint";
 
-export default tseslint.config(
+export default defineConfig(
   {
     ignores: ["dist/**"],
   },
@@ -56,11 +57,11 @@ export default tseslint.config(
           format: ["StrictPascalCase"],
         },
         {
-          selector: "property",
-          format: ["StrictPascalCase", "strictCamelCase"],
+          selector: "variable",
+          format: ["strictCamelCase", "UPPER_CASE"],
         },
         {
-          selector: ["variable", "parameter", "class", "property"],
+          selector: "parameter",
           format: ["strictCamelCase"],
         },
       ],
