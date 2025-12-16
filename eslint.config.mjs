@@ -1,17 +1,17 @@
-import eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import importX from "eslint-plugin-import-x";
 import stylistic from "@stylistic/eslint-plugin";
 import tseslint from "typescript-eslint";
+import oxlint from "eslint-plugin-oxlint";
 
-export default tseslint.config(
+export default defineConfig(
   {
     ignores: ["dist/**"],
   },
-  eslint.configs.recommended,
   {
     files: ["src/**/*.ts"],
-    extends: [...tseslint.configs.recommendedTypeChecked],
     languageOptions: {
+      parser: tseslint.parser,
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
@@ -19,37 +19,35 @@ export default tseslint.config(
     },
     plugins: {
       "@stylistic": stylistic,
+      "@typescript-eslint": tseslint.plugin,
       "import-x": importX,
     },
     rules: {
-      "no-unexpected-multiline": "error",
-      "no-unreachable": "error",
-
       "no-multiple-empty-lines": [
-          "error",
-          {
-              "max": 1,
-              "maxEOF": 0
-          }
+        "error",
+        {
+          max: 1,
+          maxEOF: 0,
+        },
       ],
 
       "@stylistic/padding-line-between-statements": [
-          "error",
-          {
-              "blankLine": "always",
-              "prev": "*",
-              "next": ["return", "multiline-expression", "block-like", "try", "throw"]
-          },
-          {
-              "blankLine": "always",
-              "prev": ["multiline-expression", "block-like", "const", "let"],
-              "next": "*"
-          },
-          {
-              "blankLine": "any",
-              "prev": ["const", "let"],
-              "next": ["const", "let"]
-          }
+        "error",
+        {
+          blankLine: "always",
+          prev: "*",
+          next: ["return", "multiline-expression", "block-like", "try", "throw"],
+        },
+        {
+          blankLine: "always",
+          prev: ["multiline-expression", "block-like", "const", "let"],
+          next: "*",
+        },
+        {
+          blankLine: "any",
+          prev: ["const", "let"],
+          next: ["const", "let"],
+        },
       ],
 
       "@typescript-eslint/naming-convention": [
@@ -59,11 +57,11 @@ export default tseslint.config(
           format: ["StrictPascalCase"],
         },
         {
-          selector: "property",
-          format: ["StrictPascalCase", "strictCamelCase"],
+          selector: "variable",
+          format: ["strictCamelCase", "UPPER_CASE"],
         },
         {
-          selector: ["variable", "parameter", "class", "property"],
+          selector: "parameter",
           format: ["strictCamelCase"],
         },
       ],
@@ -78,4 +76,5 @@ export default tseslint.config(
       ],
     },
   },
+  oxlint.buildFromOxlintConfigFile("./.oxlintrc.json"),
 );

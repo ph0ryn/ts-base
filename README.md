@@ -10,9 +10,9 @@ ph0ryn's typescript base project
 
 ```json
 {
-    "lint": "bun x eslint .",
-    "format": "bun x eslint --fix . && bun x oxfmt .",
-    "check": "bun x tsc --noEmit"
+    "lint": "bunx oxlint --type-aware",
+    "format": "bunx eslint --fix . && bunx oxfmt .",
+    "check": "bunx tsc --noEmit"
 }
 ```
 
