@@ -23,10 +23,23 @@
     "func-style": "off",
     "no-inferrable-types": "off",
     "no-magic-numbers": "off",
-    "prefer-destructuring": "warn",
     "sort-imports": "off"
   },
   "overrides": [
+    {
+      "files": [
+        "src/**/*.ts"
+      ],
+      "rules": {
+        "prefer-destructuring": [
+          "warn",
+          {
+            "object": true,
+            "array": false
+          }
+        ]
+      }
+    },
     {
       "files": [
         "src/**/*.ts"
