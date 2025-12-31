@@ -21,25 +21,14 @@
   ],
   "rules": {
     "func-style": "off",
+    "id-length": "off",
+    "max-statements": "off",
     "no-inferrable-types": "off",
     "no-magic-numbers": "off",
+    "prefer-destructuring": "off",
     "sort-imports": "off"
   },
   "overrides": [
-    {
-      "files": [
-        "src/**/*.ts"
-      ],
-      "rules": {
-        "prefer-destructuring": [
-          "warn",
-          {
-            "object": true,
-            "array": false
-          }
-        ]
-      }
-    },
     {
       "files": [
         "src/**/*.ts"
