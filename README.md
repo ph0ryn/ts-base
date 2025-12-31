@@ -1,26 +1,31 @@
 # ts-base
 
-ph0ryn's typescript base project
+ph0ryn's typescript base template
 
-## runtime
+## requirement
 
-- Bun
+- pnpm (package manager)
 
 ## script
 
+`pnpm run <script>`
+
 ```json
 {
-    "lint": "bunx oxlint --type-aware",
-    "format": "bunx eslint --fix . && bunx oxfmt .",
-    "check": "bunx tsc --noEmit"
+    "format": "pnpm run lint --fix . ; oxfmt . ; eslint --fix .",
+    "lint": "oxlint --type-aware",
+    "precommit": "pnpm run typecheck && pnpm run format",
+    "typecheck": "tsgo -p . --noEmit"
 }
 ```
 
 ## Linter
 
 - [ESLint](./eslint.config.mjs)
-  - typescript-eslint
   - eslint-plugin-import-x
+  - typescript-eslint
+  - @stylistic/eslint-plugin
+- [oxlint](./.oxlintrc.json)
   - @stylistic/eslint-plugin
 
 ## Formatter
