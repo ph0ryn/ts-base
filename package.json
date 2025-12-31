@@ -4,22 +4,35 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "bunx oxlint --type-aware",
-    "format": "bunx oxlint --type-aware --fix . ; bunx oxfmt . ; bunx eslint --fix .",
-    "check": "bunx tsc --noEmit"
+    "preinstall": "npx only-allow pnpm",
+    "lint": "oxlint --type-aware",
+    "format": "pnpm run lint --fix . ; oxfmt . ; eslint --fix .",
+    "precommit": "pnpm run typecheck && pnpm run format",
+    "typecheck": "tsgo -p . --noEmit"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.6.1",
-    "@types/bun": "latest",
+    "@typescript/native-preview": "7.0.0-dev.20251230.1",
     "eslint": "^9.39.1",
     "eslint-plugin-import-x": "^4.16.1",
     "eslint-plugin-oxlint": "^1.32.0",
+    "lint-staged": "^16.2.7",
     "oxfmt": "^0.16.0",
     "oxlint": "^1.32.0",
     "oxlint-tsgolint": "^0.9.1",
+    "sort-package-json": "^3.6.0",
     "typescript-eslint": "^8.49.0"
+  },
+  "lint-staged": {
+    "*": [
+      "pnpm run precommit"
+    ],
+    "package.json": [
+      "sort-package-json"
+    ]
   },
   "peerDependencies": {
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@10.16.1"
 }
