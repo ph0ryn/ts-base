@@ -20,6 +20,7 @@
     "node_modules/**"
   ],
   "rules": {
+    "capitalized-comments": "off",
     "func-style": "off",
     "id-length": "off",
     "max-statements": "off",
