@@ -26,20 +26,20 @@
     ]
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^5.6.1",
-    "@typescript/native-preview": "7.0.0-dev.20251230.1",
-    "eslint": "^9.39.1",
-    "eslint-plugin-import-x": "^4.16.1",
-    "eslint-plugin-oxlint": "^1.32.0",
-    "lint-staged": "^16.2.7",
-    "oxfmt": "^0.16.0",
-    "oxlint": "^1.32.0",
-    "oxlint-tsgolint": "^0.9.1",
-    "sort-package-json": "^3.6.0",
-    "typescript-eslint": "^8.49.0"
+    "@stylistic/eslint-plugin": "catalog:lint",
+    "@typescript/native-preview": "catalog:types",
+    "eslint": "catalog:lint",
+    "eslint-plugin-import-x": "catalog:lint",
+    "eslint-plugin-oxlint": "catalog:lint",
+    "lint-staged": "catalog:dev",
+    "oxfmt": "catalog:lint",
+    "oxlint": "catalog:lint",
+    "oxlint-tsgolint": "catalog:lint",
+    "sort-package-json": "catalog:dev",
+    "typescript-eslint": "catalog:lint"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "catalog:release"
   },
-  "packageManager": "pnpm@10.16.1"
+  "packageManager": "pnpm@10.28.0"
 }
