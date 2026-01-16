@@ -12,10 +12,10 @@ ph0ryn's typescript base template
 
 ```json
 {
-    "format": "pnpm run lint --fix . ; oxfmt . ; eslint --fix .",
-    "lint": "oxlint --type-aware",
-    "precommit": "pnpm run typecheck && pnpm run format",
-    "typecheck": "tsgo -p . --noEmit"
+  "format": "pnpm run lint --fix . ; oxfmt . ; eslint --fix .",
+  "lint": "oxlint --type-aware",
+  "precommit": "pnpm run typecheck && pnpm run format",
+  "typecheck": "tsgo -p . --noEmit"
 }
 ```
 
