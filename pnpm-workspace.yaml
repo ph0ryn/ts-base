@@ -8,7 +8,7 @@ catalog:
   eslint-plugin-import-x: ^4.16.1
   eslint-plugin-oxlint: ^1.39.0
   lint-staged: ^16.2.7
-  oxfmt: ^0.26.0
+  oxfmt: ^0.28.0
   oxlint: ^1.39.0
   oxlint-tsgolint: ^0.11.0
   sort-package-json: ^3.6.0
