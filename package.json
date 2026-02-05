@@ -7,9 +7,8 @@
     "format": "pnpm run lint --fix . ; oxfmt . ; eslint --fix .",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "git config core.hooksPath .githooks",
-    "lint": "oxlint --type-aware",
-    "precommit": "pnpm run typecheck && pnpm run format",
-    "typecheck": "tsgo -p . --noEmit"
+    "lint": "oxlint --type-aware --type-check",
+    "precommit": "pnpm run format"
   },
   "lint-staged": {
     "src/**/*.ts": [

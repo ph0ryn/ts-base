@@ -13,9 +13,8 @@ ph0ryn's typescript base template
 ```json
 {
   "format": "pnpm run lint --fix . ; oxfmt . ; eslint --fix .",
-  "lint": "oxlint --type-aware",
-  "precommit": "pnpm run typecheck && pnpm run format",
-  "typecheck": "tsgo -p . --noEmit"
+  "lint": "oxlint --type-aware --type-check",
+  "precommit": "pnpm run format"
 }
 ```
 
@@ -25,7 +24,7 @@ ph0ryn's typescript base template
   - eslint-plugin-import-x
   - typescript-eslint
   - @stylistic/eslint-plugin
-- [oxlint](./.oxlintrc.json)
+- [oxlint](./oxlint.config.ts)
   - @stylistic/eslint-plugin
 
 ## Formatter
