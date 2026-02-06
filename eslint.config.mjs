@@ -1,7 +1,6 @@
-import { defineConfig } from "eslint/config";
-import importX from "eslint-plugin-import-x";
-import tseslint from "typescript-eslint";
 import oxlint from "eslint-plugin-oxlint";
+import { defineConfig } from "eslint/config";
+import tseslint from "typescript-eslint";
 
 export default defineConfig(
   {
@@ -18,7 +17,6 @@ export default defineConfig(
     },
     plugins: {
       "@typescript-eslint": tseslint.plugin,
-      "import-x": importX,
     },
     rules: {
       "no-multiple-empty-lines": [
@@ -42,15 +40,6 @@ export default defineConfig(
         {
           selector: "parameter",
           format: ["strictCamelCase"],
-        },
-      ],
-
-      "import-x/order": [
-        "error",
-        {
-          alphabetize: { order: "asc" },
-          groups: ["builtin", "external", "internal", ["parent", "sibling", "index"], "type"],
-          "newlines-between": "always",
         },
       ],
     },

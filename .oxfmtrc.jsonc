@@ -1,5 +1,7 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": ["pnpm-*.yaml"],
+
   "printWidth": 100,
   "tabWidth": 2,
   "useTabs": false,
@@ -10,6 +12,18 @@
   "arrowParens": "always",
   "endOfLine": "lf",
   "insertFinalNewline": true,
+
   "experimentalSortPackageJson": false,
-  "ignorePatterns": ["pnpm-*.yaml"],
+  "experimentalSortImports": {
+    "order": "asc",
+    "newlinesBetween": true,
+    "groups": [
+      ["value-builtin"],
+      ["value-external"],
+      ["value-internal"],
+      ["value-parent", "value-sibling", "value-index"],
+      ["type-import"],
+      ["unknown"],
+    ],
+  },
 }
