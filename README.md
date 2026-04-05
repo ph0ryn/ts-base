@@ -21,7 +21,6 @@ ph0ryn's typescript base template
 ## Linter
 
 - [ESLint](./eslint.config.mjs)
-  - eslint-plugin-import-x
   - typescript-eslint
   - @stylistic/eslint-plugin
 - [oxlint](./oxlint.config.ts)
