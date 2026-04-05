@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": ["pnpm-*.yaml"],
+  "ignorePatterns": ["package.json", "pnpm-*.yaml"],
 
   "printWidth": 100,
   "tabWidth": 2,

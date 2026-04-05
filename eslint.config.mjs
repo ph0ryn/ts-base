@@ -19,14 +19,6 @@ export default defineConfig(
       "@typescript-eslint": tseslint.plugin,
     },
     rules: {
-      "no-multiple-empty-lines": [
-        "error",
-        {
-          max: 1,
-          maxEOF: 0,
-        },
-      ],
-
       "@typescript-eslint/naming-convention": [
         "error",
         {
