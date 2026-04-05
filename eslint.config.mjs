@@ -36,5 +36,5 @@ export default defineConfig(
       ],
     },
   },
-  oxlint.buildFromOxlintConfigFile("./.oxlintrc.json"),
+  oxlint.buildFromOxlintConfigFile("./oxlint.config.ts"),
 );
