@@ -9,7 +9,7 @@ catalog:
   lint-staged: ^16.2.7
   oxfmt: ^0.44.0
   oxlint: ^1.43.0
-  oxlint-tsgolint: ^0.19.0
+  oxlint-tsgolint: ^0.21.0
   sort-package-json: ^3.6.0
   typescript: 5.9.3
   typescript-eslint: ^8.56.1
