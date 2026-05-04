@@ -56,12 +56,6 @@ pnpm run format
 pnpm run lint
 ```
 
-For markdown-only changes, also run markdownlint when available:
-
-```sh
-markdownlint-cli2 "**/*.md" --config ~/.markdownlint-cli2.jsonc
-```
-
 If a requested change adds a new script, runtime path, test framework, or build
 step, update both `README.md` and this guide so future agents do not rely on
 stale commands.
