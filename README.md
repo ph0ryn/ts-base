@@ -77,4 +77,8 @@ Run all commands from the repository root.
 
 ## License
 
-See [LICENSE](./LICENSE).
+You may use this repository as a template to create new projects.
+
+Projects created from this template may choose their own license. They are not
+required to use the MIT License or any other license solely because this
+template was used.
