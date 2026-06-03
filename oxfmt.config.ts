@@ -4,7 +4,12 @@ export default defineConfig({
   arrowParens: "always",
   bracketSpacing: true,
   endOfLine: "lf",
-  experimentalSortImports: {
+  ignorePatterns: ["package.json", "pnpm-*.yaml"],
+  insertFinalNewline: true,
+  printWidth: 100,
+  semi: true,
+  singleQuote: false,
+  sortImports: {
     groups: [
       ["value-builtin"],
       ["value-external"],
@@ -16,12 +21,7 @@ export default defineConfig({
     newlinesBetween: true,
     order: "asc",
   },
-  experimentalSortPackageJson: false,
-  ignorePatterns: ["package.json", "pnpm-*.yaml"],
-  insertFinalNewline: true,
-  printWidth: 100,
-  semi: true,
-  singleQuote: false,
+  sortPackageJson: false,
   tabWidth: 2,
   trailingComma: "all",
   useTabs: false,
