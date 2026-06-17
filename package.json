@@ -4,7 +4,8 @@
   "type": "module",
   "module": "src/index.ts",
   "scripts": {
-    "format": "pnpm run lint --fix . ; oxfmt . ; eslint --fix .",
+    "fix": "pnpm run lint --fix ; pnpm run format ; eslint --fix",
+    "format": "oxfmt",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "git config core.hooksPath .githooks",
     "lint": "oxlint --type-aware --type-check",

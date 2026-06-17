@@ -16,7 +16,7 @@ export default defineConfig({
   env: {
     node: true,
   },
-  ignorePatterns: ["dist/**", "eslint.config.mjs", "node_modules/**"],
+  ignorePatterns: ["dist/**", "node_modules/**"],
   jsPlugins: [
     {
       name: "@stylistic",

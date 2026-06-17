@@ -22,16 +22,16 @@ export default defineConfig(
       "@typescript-eslint/naming-convention": [
         "error",
         {
-          selector: "class",
           format: ["StrictPascalCase"],
+          selector: "class",
         },
         {
-          selector: "variable",
           format: ["strictCamelCase", "UPPER_CASE"],
+          selector: "variable",
         },
         {
-          selector: "parameter",
           format: ["strictCamelCase"],
+          selector: "parameter",
         },
       ],
     },
