@@ -38,5 +38,5 @@
     "typescript": "catalog:",
     "typescript-eslint": "catalog:"
   },
-  "packageManager": "pnpm@11.1.1"
+  "packageManager": "pnpm@11.9.0"
 }
