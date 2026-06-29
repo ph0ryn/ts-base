@@ -9,7 +9,7 @@
     "preinstall": "npx only-allow pnpm",
     "postinstall": "git config core.hooksPath .githooks",
     "lint": "eslint ; oxlint --type-aware --type-check",
-    "precommit": "pnpm run format"
+    "precommit": "pnpm run fix"
   },
   "lint-staged": {
     "src/**/*.ts": [
