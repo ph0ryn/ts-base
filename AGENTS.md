@@ -28,7 +28,8 @@ Run all commands from the repository root.
 | -------------------- | ----------------- |
 | Install dependencies | `pnpm install`    |
 | Lint                 | `pnpm run lint`   |
-| Format and autofix   | `pnpm run format` |
+| Format               | `pnpm run format` |
+| Autofix              | `pnpm run fix`    |
 
 There is currently no `test`, `build`, or separate `typecheck` script.
 `pnpm run lint` already runs Oxlint with `--type-aware --type-check`. Check

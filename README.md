@@ -19,8 +19,8 @@ without prescribing an application framework.
 
 ## Requirements
 
-- pnpm `10.33.0` or compatible.
-- Node.js capable of running pnpm tooling.
+- pnpm `11.1.1` or compatible.
+- Node.js supported by the configured pnpm and lint tooling.
 - Bun-compatible ESM runtime if you use the default `"module"` entry directly.
 
 This template enforces pnpm during install. Do not use npm or yarn.
@@ -45,11 +45,12 @@ After cloning or creating a new repository from this template:
 
 Run all commands from the repository root.
 
-| Command           | Description                                      |
-| ----------------- | ------------------------------------------------ |
-| `pnpm install`    | Install dependencies and configure Git hooks.    |
-| `pnpm run lint`   | Run Oxlint type-aware linting and type checking. |
-| `pnpm run format` | Run lint fixes, oxfmt, and ESLint fixes.         |
+| Command           | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| `pnpm install`    | Install dependencies and configure Git hooks.     |
+| `pnpm run lint`   | Run ESLint, Oxlint, and Oxlint type checking.     |
+| `pnpm run format` | Run oxfmt.                                        |
+| `pnpm run fix`    | Run Oxlint type-aware fixes and oxfmt formatting. |
 
 ## Project Layout
 
@@ -58,7 +59,7 @@ Run all commands from the repository root.
 ├── src/index.ts          # Default source entry
 ├── eslint.config.mjs     # ESLint configuration
 ├── oxlint.config.ts      # Oxlint configuration
-├── .oxfmtrc.jsonc        # oxfmt configuration
+├── oxfmt.config.ts       # oxfmt configuration
 ├── .githooks/            # Git hooks
 ├── package.json          # Scripts and package metadata
 ├── pnpm-workspace.yaml   # pnpm workspace and catalog settings

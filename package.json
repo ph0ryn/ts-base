@@ -4,12 +4,12 @@
   "type": "module",
   "module": "src/index.ts",
   "scripts": {
-    "fix": "pnpm run lint --fix ; pnpm run format",
+    "fix": "oxlint --type-aware --type-check --fix && pnpm run format",
     "format": "oxfmt",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "git config core.hooksPath .githooks",
-    "lint": "eslint ; oxlint --type-aware --type-check",
-    "precommit": "pnpm run fix"
+    "lint": "eslint && oxlint --type-aware --type-check",
+    "precommit": "pnpm run fix && eslint"
   },
   "lint-staged": {
     "src/**/*.ts": [
