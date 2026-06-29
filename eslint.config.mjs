@@ -23,14 +23,24 @@ export default defineConfig(
         "error",
         {
           format: ["StrictPascalCase"],
-          selector: "class",
+          selector: "typeLike",
         },
         {
           format: ["strictCamelCase", "UPPER_CASE"],
+          modifiers: ["const"],
           selector: "variable",
         },
         {
           format: ["strictCamelCase"],
+          selector: "variable",
+        },
+        {
+          format: ["strictCamelCase"],
+          selector: "function",
+        },
+        {
+          format: ["strictCamelCase"],
+          leadingUnderscore: "allow",
           selector: "parameter",
         },
       ],
