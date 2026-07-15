@@ -11,20 +11,6 @@
     "lint": "eslint && oxlint --type-aware --type-check",
     "precommit": "pnpm run fix && eslint"
   },
-  "lint-staged": {
-    "src/**/*.ts": [
-      "pnpm run precommit"
-    ],
-    "*.{js,mjs}": [
-      "pnpm run format"
-    ],
-    "*.{json,jsonc}": [
-      "pnpm oxfmt ."
-    ],
-    "package.json": [
-      "sort-package-json"
-    ]
-  },
   "devDependencies": {
     "@stylistic/eslint-plugin": "catalog:",
     "@typescript/native-preview": "catalog:",
