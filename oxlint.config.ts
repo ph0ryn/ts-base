@@ -24,6 +24,10 @@ export default defineConfig({
     },
   ],
   plugins: ["typescript"],
+  options: {
+    typeAware: true,
+    typeCheck: true,
+  },
   rules: {
     "capitalized-comments": "off",
     "func-style": "off",
