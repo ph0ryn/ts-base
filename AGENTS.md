@@ -1,62 +1,34 @@
-# ts-base Agent Guide
+<!--VITE PLUS START-->
 
-## Repository Purpose
+# Using Vite+, the Unified Toolchain for the Web
 
-This repository is a reusable TypeScript template. Treat changes as template
-maintenance unless the user explicitly asks to turn it into a concrete project.
+This project is using Vite+, a unified toolchain built on top of Vite, Rolldown, Vitest, tsdown, Oxlint, Oxfmt, and Vite Task. Vite+ wraps runtime management, package management, and frontend tooling in a single global CLI called `vp`. Vite+ is distinct from Vite, and it invokes Vite through `vp dev` and `vp build`. Run `vp help` to print a list of commands and `vp <command> --help` for information about a specific command.
 
-Keep the template small, generic, and easy to fork. Do not add app-specific
-frameworks, runtime assumptions, build pipelines, or documentation unless the
-request specifically needs them.
+Docs are local at `node_modules/vite-plus/docs` or online at <https://viteplus.dev/guide/>.
 
-## Tooling
+## Built-in Commands vs Scripts
 
-- Package manager: pnpm only. Do not use npm or yarn.
-- Runtime target: Bun-compatible ESM.
-- Module system: ESM with `"type": "module"`.
-- TypeScript is configured as strict and `noEmit`.
-- Linting and type checking are primarily handled by Oxlint, with ESLint used
-  for TypeScript naming rules and autofix support.
-- Formatting is handled by oxfmt.
-- Git hooks are configured automatically during `postinstall`.
+`vp <name>` runs a built-in command. `vp run <name>` runs a `package.json` script or a `vite.config.ts` task. Scripts cannot overwrite built-ins, so `vp dev` and `vp run dev` may do different things. Check `package.json` and `vite.config.ts` first, and run `vp run <name>` when the project defines a script or task with that name.
 
-## Common Commands
+## Tool Versions
 
-Run all commands from the repository root.
+Run `vp toolchain` to show versions and relationships in the active Vite+
+release. Add a tool name to select part of the graph. For example, run
+`vp toolchain vite`. Use `--global` to ignore the local `vite-plus` package. Use
+`vp why <package>` to show the package-manager dependency graph.
 
-| Task                 | Command           |
-| -------------------- | ----------------- |
-| Install dependencies | `pnpm install`    |
-| Lint                 | `pnpm run lint`   |
-| Format               | `pnpm run format` |
-| Autofix              | `pnpm run fix`    |
+## Review Checklist
 
-There is currently no `test`, `build`, or separate `typecheck` script.
-`pnpm run lint` already runs Oxlint with `--type-aware --type-check`. Check
-`package.json` before adding or running new lifecycle commands.
+- [ ] Run `vp install` after pulling remote changes and before getting started.
+- [ ] Run `vp check` and `vp test` to format, lint, type check and test changes.
+- [ ] Check if there are `vite.config.ts` tasks or `package.json` scripts necessary for validation, run via `vp run <script>`.
+- [ ] If setup, runtime, or package-manager behavior looks wrong, run `vp env doctor` and include its output when asking for help.
 
-## Editing Rules
+<!--VITE PLUS END-->
 
-- Keep external code, comments, commit messages, and repository documentation in
-  English.
-- Preserve pnpm workspace catalog usage in `pnpm-workspace.yaml` when updating
-  dependencies.
-- Prefer small, direct changes over new abstractions.
-- Do not add dependencies for documentation-only or housekeeping changes.
-- Do not widen the template into a framework starter unless explicitly asked.
-- Keep generated-project instructions in `README.md`; keep agent workflow notes
-  in this file.
+## Template Scope
 
-## Validation
-
-For repository changes, run the narrowest relevant checks first. For normal
-template maintenance, use:
-
-```sh
-pnpm run format
-pnpm run lint
-```
-
-If a requested change adds a new script, runtime path, test framework, or build
-step, update both `README.md` and this guide so future agents do not rely on
-stale commands.
+- Keep this a minimal, framework-independent TypeScript template.
+- Use `vp fmt` and `vp check` for validation. No tests or build target are configured yet.
+- Keep dependency versions in the pnpm catalog and align the Vite Plus, Vite core, and Vitest pins.
+- Naming checks apply only to variable and function declarations, not parameters or type names.

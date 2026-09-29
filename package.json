@@ -4,25 +4,21 @@
   "type": "module",
   "module": "src/index.ts",
   "scripts": {
-    "fix": "oxlint --fix && pnpm run format",
-    "format": "oxfmt",
-    "preinstall": "npx only-allow pnpm",
-    "postinstall": "git config core.hooksPath .githooks",
-    "lint": "eslint && oxlint",
-    "precommit": "pnpm run fix && eslint"
+    "check": "vp check",
+    "fix": "vp check --fix",
+    "format": "vp fmt",
+    "lint": "vp lint",
+    "preinstall": "node -e \"if (!require('node:path').basename(process.env.npm_execpath ?? '').startsWith('pnpm')) { console.error('Please use pnpm to install dependencies.'); process.exit(1); }\"",
+    "postinstall": "vp config --no-agent",
+    "precommit": "vp staged"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "catalog:",
-    "@typescript/native-preview": "catalog:",
-    "eslint": "catalog:",
-    "eslint-plugin-oxlint": "catalog:",
-    "lint-staged": "catalog:",
-    "oxfmt": "catalog:",
-    "oxlint": "catalog:",
-    "oxlint-tsgolint": "catalog:",
-    "sort-package-json": "catalog:",
     "typescript": "catalog:",
-    "typescript-eslint": "catalog:"
+    "vite-plus": "catalog:"
+  },
+  "engines": {
+    "node": "^22.22.1 || ^24.11.0 || >=26.0.0"
   },
   "packageManager": "pnpm@11.1.1"
 }
